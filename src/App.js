@@ -1,31 +1,19 @@
-import Button from "@mui/material/Button";
-import PhotoCamera from "@mui/icons-material/PhotoCamera";
-import { Typography, styled } from "@mui/material";
+import Sidebar from "./components/Sidebar";
+import Feed from "./components/Feed";
+import Rightbar from "./components/Rightbar";
+import Box from "@mui/material/Box";
+import Stack from "@mui/material/Stack";
 
 function App() {
-  const CustomButton = styled(Button)(({ theme }) => ({
-    margin: 1,
-    backgroundColor: "orange",
-    color: "white",
-    "&:hover": {
-      background: "white",
-      border: `1px solid ${theme.palette.otherColor.main}`,
-      color: "orangered",
-    },
-  }));
   return (
-    <>
-      <Button variant="text" startIcon={<PhotoCamera />}>
-        Text
-      </Button>
-      <Button variant="contained">Contained</Button>
-      <Button variant="outlined">Outlined</Button>
-      <Typography variant="h1" component="div">
-        It uses h1 style but it's a div tag
-      </Typography>
-      <CustomButton>styled button</CustomButton>
-      <CustomButton>styled another button</CustomButton>
-    </>
+    <Box>
+      {/* navbar */}
+      <Stack direction="row" spacing={2} justifyContent="space-between">
+        <Sidebar></Sidebar>
+        <Feed></Feed>
+        <Rightbar></Rightbar>
+      </Stack>
+    </Box>
   );
 }
 

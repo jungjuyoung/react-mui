@@ -1,8 +1,11 @@
-import { Box } from "@mui/system";
-import React from "react";
+import { AppBar, Toolbar } from "@mui/material";
 
 const Navbar = () => {
-  return <Box>Navbar</Box>;
+  return (
+    <AppBar position="stick">
+      <Toolbar>NavBar</Toolbar>
+    </AppBar>
+  );
 };
 
 export default Navbar;

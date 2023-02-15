@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   AppBar,
   Toolbar,
@@ -11,6 +12,8 @@ import Face2Icon from "@mui/icons-material/Face2";
 import MailIcon from "@mui/icons-material/Mail";
 import { Box } from "@mui/system";
 import { Notifications } from "@mui/icons-material";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
 const StyledToolbar = styled(Toolbar)({
   display: "flex",
   justifyContent: "space-between",
@@ -43,6 +46,7 @@ const UserBox = styled(Box)(({ theme }) => ({
 }));
 
 const Navbar = () => {
+  const [open, setOpen] = useState(false);
   return (
     <AppBar position="sticky">
       <StyledToolbar>
@@ -64,9 +68,10 @@ const Navbar = () => {
             sx={{ width: 30, height: 30 }}
             alt="Nadia"
             src="/static/images/avatar/1.jpg"
+            onClick={e => setOpen(true)}
           />
         </Icons>
-        <UserBox>
+        <UserBox onClick={e => setOpen(true)}>
           <Avatar
             sx={{ width: 30, height: 30 }}
             alt="Nadia"
@@ -75,6 +80,24 @@ const Navbar = () => {
           <Typography variant="span">Nadia</Typography>
         </UserBox>
       </StyledToolbar>
+      <Menu
+        id="demo-positioned-menu"
+        aria-labelledby="demo-positioned-button"
+        open={open}
+        onClose={e => setOpen(false)}
+        anchorOrigin={{
+          vertical: "top",
+          horizontal: "right",
+        }}
+        transformOrigin={{
+          vertical: "top",
+          horizontal: "left",
+        }}
+      >
+        <MenuItem>Profile</MenuItem>
+        <MenuItem>My account</MenuItem>
+        <MenuItem>Logout</MenuItem>
+      </Menu>
     </AppBar>
   );
 };

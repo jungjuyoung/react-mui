@@ -12,9 +12,17 @@ import Favorite from "@mui/icons-material/Favorite";
 import FavoriteBorder from "@mui/icons-material/FavoriteBorder";
 import ShareIcon from "@mui/icons-material/Share";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
+import { styled } from "@mui/system";
+
+const CardComponent = styled(Card)`
+  & + & {
+    margin-top: 20px;
+  }
+`;
+
 function Post() {
   return (
-    <Card>
+    <CardComponent>
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: "red" }} aria-label="recipe">
@@ -53,7 +61,7 @@ function Post() {
           <ShareIcon />
         </IconButton>
       </CardActions>
-    </Card>
+    </CardComponent>
   );
 }
 

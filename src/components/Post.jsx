@@ -14,15 +14,15 @@ import ShareIcon from "@mui/icons-material/Share";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { styled } from "@mui/system";
 
-const CardComponent = styled(Card)`
-  & + & {
-    margin-top: 20px;
-  }
-`;
+// const CardComponent = styled(Card)`
+//   & + & {
+//     margin-top: 20px;
+//   }
+// `;
 
 function Post() {
   return (
-    <CardComponent>
+    <Card sx={{ margin: 5 }}>
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: "red" }} aria-label="recipe">
@@ -61,7 +61,7 @@ function Post() {
           <ShareIcon />
         </IconButton>
       </CardActions>
-    </CardComponent>
+    </Card>
   );
 }
 

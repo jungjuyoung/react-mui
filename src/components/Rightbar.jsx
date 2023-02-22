@@ -1,4 +1,4 @@
-import { Typography } from "@mui/material";
+import { Avatar, AvatarGroup, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 
@@ -9,6 +9,12 @@ const Rightbar = () => {
         <Typography variant="h6" fontWeight={100}>
           Online Friends
         </Typography>
+        <AvatarGroup total={7}>
+          <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+          <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />
+          <Avatar alt="Agnes Walker" src="/static/images/avatar/4.jpg" />
+          <Avatar alt="Trevor Henderson" src="/static/images/avatar/5.jpg" />
+        </AvatarGroup>
       </Box>
     </Box>
   );

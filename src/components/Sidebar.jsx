@@ -18,7 +18,7 @@ import ModeNightIcon from "@mui/icons-material/ModeNight";
 import Switch from "@mui/material/Switch";
 
 const label = { inputProps: { "aria-label": "Switch demo" } };
-const Sidebar = () => {
+const Sidebar = ({ mode, setMode }) => {
   return (
     <Box flex={1} p={2} sx={{ display: { xs: "none", sm: "block" } }}>
       <Box position="fixed">
@@ -84,7 +84,9 @@ const Sidebar = () => {
               <ListItemIcon>
                 <ModeNightIcon />
               </ListItemIcon>
-              <Switch {...label} defaultChecked />
+              <Switch
+                onChange={e => setMode(mode === "light" ? "dark" : "light")}
+              />
             </ListItemButton>
           </ListItem>
         </List>
